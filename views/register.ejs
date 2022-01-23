@@ -1,0 +1,58 @@
+<%- include('partials/_header')-%>
+<body>
+  <div class="main">
+    <section class="signup">
+      <div class="container">
+
+        <div class="signup-content">
+          <div class="signup-form">
+            <h2 class="form-title">Sign up</h2>
+            <form method="POST" class="register-form" action ="/users/register"> 
+              <div class="form-group">
+                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input type="text" name="firstName"  placeholder="First Name" />
+              </div>
+              <div class="form-group">
+                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input type="text" name="lastName"  placeholder="Last Name" />
+              </div>
+              <div class="form-group">
+                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                <input type="text" name="userName"  placeholder="User Name" />
+              </div>
+
+              <div class="form-group">
+                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                <input type="password" name="password" id="pass" placeholder="Password" />
+              </div>
+              <div class="form-group">
+                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                <input type="password" name="password2" id="re_pass" placeholder="Repeat your password" />
+              </div>
+
+              <div class="form-group form-button">
+                <input type="submit"   class="form-submit" value="Register" />
+              </div>
+            </form>
+          </div>
+          <div class="signup-image">
+            <figure><img src="/images/signup-image.jpg" alt="sing up image"></figure>
+            <a href="/login" class="signup-image-link">I am already member</a>
+          </div>
+        </div>
+        
+        <% if(errors.length > 0) {%>
+          <% for(let i=0; i< errors.length; i++)  { %>
+          <div class="alert alert-danger">
+            <strong>Oops!</strong> <%= errors[i] %>
+          </div>
+          <% } %>
+          <% } %>
+      </div>
+    </section>
+  </div>
+
+
+</body>
+
+</html>
